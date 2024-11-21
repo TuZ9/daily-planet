@@ -1,4 +1,6 @@
-﻿using daily_planet_infra.Context;
+﻿using daily_planet_application.Services;
+using daily_planet_domain.Interface.Services;
+using daily_planet_infra.Context;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -19,14 +21,14 @@ namespace daily_planet_infra.Extensions
         private static IServiceCollection RegisterServices(this IServiceCollection services)
         {
             return services
-                .AddScoped<IFlowerService, FlowerService>();
+                .AddScoped<IContentService, ContentService>();
         }
         private static IServiceCollection RegisterRepositories(this IServiceCollection services)
         {
             return services
-                .AddScoped(_ => new AuroraDbContext())
-                .AddScoped<IFlowerRepository, FlowerRepository>()
-                .AddScoped<IStrainRepository, StrainRepository>();
+                .AddScoped(_ => new AuroraDbContext());
+                //.AddScoped<IFlowerRepository, FlowerRepository>()
+                //.AddScoped<IStrainRepository, StrainRepository>();
         }
     }
 }
