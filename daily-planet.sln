@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35514.174
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "daily-planet-domain", "daily-planet-domain\daily-planet-domain.csproj", "{D237EBE0-E4F8-4221-8B2A-7F947F8BF265}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "daily-planet-api", "daily-planet-api\daily-planet-api.csproj", "{C0D333FB-21D8-4B5A-ABFB-DAE71B1ACF31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "daily-planet-infra", "daily-planet-infra\daily-planet-infra.csproj", "{8F319637-FBA7-4A5E-837D-DCE22FDF733E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "daily-planet-application", "daily-planet-application\daily-planet-application.csproj", "{4BAC4D45-E324-40A0-8305-DC0D87C498CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D237EBE0-E4F8-4221-8B2A-7F947F8BF265}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D237EBE0-E4F8-4221-8B2A-7F947F8BF265}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D237EBE0-E4F8-4221-8B2A-7F947F8BF265}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D237EBE0-E4F8-4221-8B2A-7F947F8BF265}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0D333FB-21D8-4B5A-ABFB-DAE71B1ACF31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0D333FB-21D8-4B5A-ABFB-DAE71B1ACF31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0D333FB-21D8-4B5A-ABFB-DAE71B1ACF31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0D333FB-21D8-4B5A-ABFB-DAE71B1ACF31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F319637-FBA7-4A5E-837D-DCE22FDF733E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F319637-FBA7-4A5E-837D-DCE22FDF733E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F319637-FBA7-4A5E-837D-DCE22FDF733E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F319637-FBA7-4A5E-837D-DCE22FDF733E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BAC4D45-E324-40A0-8305-DC0D87C498CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BAC4D45-E324-40A0-8305-DC0D87C498CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BAC4D45-E324-40A0-8305-DC0D87C498CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BAC4D45-E324-40A0-8305-DC0D87C498CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
