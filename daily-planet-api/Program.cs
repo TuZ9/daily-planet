@@ -12,6 +12,8 @@ var builder = WebApplication.CreateBuilder(args);
 SwaggerConfiguration.AddSwagger(builder.Services);
 RunTimeConfig.SetConfigs(builder.Configuration);
 builder.Services.AddHttpClients();
+
+
 builder.Services.AddMemoryCache();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddControllers();
