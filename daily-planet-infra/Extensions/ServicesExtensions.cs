@@ -2,11 +2,6 @@
 using daily_planet_domain.Interface.Services;
 using daily_planet_infra.Context;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace daily_planet_infra.Extensions
 {
