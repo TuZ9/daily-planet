@@ -73,7 +73,9 @@ app.UseHealthChecks("/env", new HealthCheckOptions
     }
 });
 
+#pragma warning disable ASP0000 // Do not call 'IServiceCollection.BuildServiceProvider' in 'ConfigureServices'
 var serviceProvider = builder.Services.BuildServiceProvider();
+#pragma warning restore ASP0000 // Do not call 'IServiceCollection.BuildServiceProvider' in 'ConfigureServices'
 HangireJobs.RunHangFireJob(serviceProvider);
 app.UseRouting();
 app.UseAuthentication();

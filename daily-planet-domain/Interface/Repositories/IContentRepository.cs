@@ -2,11 +2,11 @@
 
 namespace daily_planet_domain.Interface.Repositories
 {
-    public interface IContentRepository
+    public interface ISearchRepository
     {
-        Task<IEnumerable<News>> Get();
-        Task Insert(IEnumerable<News> contents);
-        Task Update(IEnumerable<News> contents);
-        Task Delete(News contents);
+        Task<IEnumerable<Search>> Get();
+        Task Insert(IEnumerable<Search> searchs);
+        Task Update(IEnumerable<Search> searchs);
+        Task Delete(Search search);
     }
 }

@@ -17,4 +17,8 @@
     <ProjectReference Include="..\daily-planet-infra\daily-planet-infra.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controller\" />
+  </ItemGroup>
+
 </Project>

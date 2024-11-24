@@ -5,15 +5,15 @@ using Microsoft.Extensions.Logging;
 
 namespace daily_planet_infra.Repositories
 {
-    public class ContentRepository : BaseAuroraRepository<News>, IContentRepository
+    public class SearchRepository : BaseAuroraRepository<Search>, ISearchRepository
     {
         private readonly ILogger<ContentRepository> _logger;
-        public ContentRepository(AuroraDbContext context, ILogger<ContentRepository> logger) : base(context)
+        public SearchRepository(AuroraDbContext context, ILogger<ContentRepository> logger) : base(context)
         {
             _logger = logger;
         }
 
-        public async Task Delete(News contents)
+        public async Task Delete(Search contents)
         {
             try
             {
@@ -27,7 +27,7 @@ namespace daily_planet_infra.Repositories
             }
         }
 
-        public async Task<IEnumerable<News>> Get()
+        public async Task<IEnumerable<Search>> Get()
         {
             try
             {
@@ -44,7 +44,7 @@ namespace daily_planet_infra.Repositories
             }
         }
 
-        public async Task Insert(IEnumerable<News> contents)
+        public async Task Insert(IEnumerable<Search> contents)
         {
             try
             {
@@ -60,7 +60,7 @@ namespace daily_planet_infra.Repositories
             }
         }
 
-        public async Task Update(IEnumerable<News> contents)
+        public async Task Update(IEnumerable<Search> contents)
         {
             try
             {
