@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using System.Net.Mime;
 using System.Text;
 using System.Text.Json;
+using System.Xml;
 
 namespace daily_planet_application.Services
 {
@@ -96,6 +97,31 @@ namespace daily_planet_application.Services
                     var contentStream = await httpResponseMessage.Content.ReadAsStreamAsync();
                     var result = JsonSerializer.Deserialize<TEntity>(contentStream);
                     return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Resourse Server {0} return an error {1}", url, ex.Message);
+                throw new Exception(ex.Message);
+            }
+            return null;
+        }
+
+        public async Task<XmlNodeList> GetXmlAsync(string url)
+        {
+            try
+            {
+                using var httpResponseMessage = await _httpClient.GetAsync(url);
+                _logger.LogInformation("Get from url: {0}", url);
+
+                if (httpResponseMessage.IsSuccessStatusCode)
+                {
+                    var contentStream = await httpResponseMessage.Content.ReadAsStringAsync();
+                    XmlDocument xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(contentStream);
+                    //XmlNodeList items = 
+
+                    return xmlDoc.SelectNodes("//item"); 
                 }
             }
             catch (Exception ex)

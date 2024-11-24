@@ -22,7 +22,6 @@ namespace daily_planet_infra.Extensions
         {
             return services
                 .AddScoped(_ => new AuroraDbContext());
-                //.AddScoped<IFlowerRepository, FlowerRepository>()
                 //.AddScoped<IStrainRepository, StrainRepository>();
         }
     }

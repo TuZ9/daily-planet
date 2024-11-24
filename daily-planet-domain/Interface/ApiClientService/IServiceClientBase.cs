@@ -1,4 +1,6 @@
 ﻿
+using System.Xml;
+
 namespace daily_planet_domain.Interface.ApiClientService
 {
     public interface IServiceClientBase<TEntity> where TEntity : class
@@ -10,5 +12,6 @@ namespace daily_planet_domain.Interface.ApiClientService
         Task PostAsync(string url, TEntity obj);
         Task PutAsync(string url, TEntity obj);
         Task DeleteAsync(string url);
+        Task<XmlNodeList> GetXmlAsync(string url);
     }
 }
