@@ -13,7 +13,8 @@ var builder = WebApplication.CreateBuilder(args);
 SwaggerConfiguration.AddSwagger(builder.Services);
 RunTimeConfig.SetConfigs(builder.Configuration);
 builder.Services.AddHttpClients();
-//builder.Services.AddAutoMapper(typeof(EntityToDtoMapper), typeof(DtoToEnityMapper));
+builder.Services.AddServices();
+builder.Services.AddAutoMapper(typeof(EntityToDtoMapper), typeof(DtoToEnityMapper));
 builder.Services.AddMemoryCache();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddControllers();
@@ -72,6 +73,8 @@ app.UseHealthChecks("/env", new HealthCheckOptions
     }
 });
 
+var serviceProvider = builder.Services.BuildServiceProvider();
+HangireJobs.RunHangFireJob(serviceProvider);
 app.UseRouting();
 app.UseAuthentication();
 app.UseHttpsRedirection();
