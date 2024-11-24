@@ -12,8 +12,6 @@ namespace daily_planet_infra.Extensions
             var serviceProvider = services.BuildServiceProvider();
 
             services.AddHttpClient<IGoogleRssApiClient, GoogleRssApiClient>(_ => _.BaseAddress = new Uri(RunTimeConfig.GoogleRssUrl));
-            //services.AddHttpClient<IXboxAchievementApiClient, XboxAchievementApiClient>(_ => _.BaseAddress = new Uri(RunTimeConfig.XboxEndpoint));
-            //services.AddHttpClient<IXboxUserApiClient, XboxUserApiClient>(_ => _.BaseAddress = new Uri(RunTimeConfig.XboxEndpoint));
 
             return services;
         }

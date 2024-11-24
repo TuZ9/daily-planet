@@ -119,7 +119,7 @@ namespace daily_planet_application.Services
                     var contentStream = await httpResponseMessage.Content.ReadAsStringAsync();
                     XmlDocument xmlDoc = new XmlDocument();
                     xmlDoc.LoadXml(contentStream);
-                    //XmlNodeList items = 
+                    XmlNodeList items = xmlDoc.SelectNodes("//item");
 
                     return xmlDoc.SelectNodes("//item"); 
                 }
