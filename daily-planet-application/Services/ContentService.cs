@@ -35,10 +35,11 @@ namespace daily_planet_application.Services
                 {
                     var noticia = new News
                     {
-                        Titulo = item["title"]?.InnerText,
-                        Descricao = item["description"]?.InnerText,
+                        IdContent = Guid.NewGuid(),
+                        Title = item["title"]?.InnerText,
+                        Description = item["description"]?.InnerText,
                         Url = item["link"]?.InnerText,
-                        DataPublicacao = DateTime.Parse(item["pubDate"]?.InnerText)
+                        DatePublication = DateTime.Parse(item["pubDate"]?.InnerText)
                     };
                     noticias.Add(noticia);
                 }

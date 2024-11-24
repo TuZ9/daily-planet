@@ -1,3 +1,4 @@
+using daily_planet_application.AutoMapper;
 using daily_planet_application.Static;
 using daily_planet_infra.Extensions;
 using daily_planet_infra.Ioc.Swagger;
@@ -12,8 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 SwaggerConfiguration.AddSwagger(builder.Services);
 RunTimeConfig.SetConfigs(builder.Configuration);
 builder.Services.AddHttpClients();
-
-
+//builder.Services.AddAutoMapper(typeof(EntityToDtoMapper), typeof(DtoToEnityMapper));
 builder.Services.AddMemoryCache();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddControllers();
