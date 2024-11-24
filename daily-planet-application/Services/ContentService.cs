@@ -14,9 +14,9 @@ namespace daily_planet_application.Services
             _logger = logger;
         }
 
-        public async Task<List<News>> BuscarNoticiasAsync()
+        public async Task<List<News>> BuscarNoticiasAsync(string search)
         {
-            string url = "https://news.google.com/rss/search?q=tecnologia&hl=pt-BR&gl=BR&ceid=BR:pt-419";
+            string url = $"https://news.google.com/rss/search?q={search}&hl=pt-BR&gl=BR&ceid=BR:pt-419";
             var noticias = new List<News>();
 
             using (HttpClient client = new HttpClient())
