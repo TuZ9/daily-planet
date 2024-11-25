@@ -1,4 +1,5 @@
-﻿using daily_planet_domain.Entities;
+﻿using daily_planet_application.Static;
+using daily_planet_domain.Entities;
 using daily_planet_domain.Interface.ApiClientService;
 using daily_planet_domain.Interface.Services;
 using Microsoft.Extensions.Logging;
@@ -15,6 +16,18 @@ namespace daily_planet_application.Services
         {
             _logger = logger;
             _googleRssApiClient = googleRssApiClient;
+        }
+
+        public async Task ProcessNews()
+        {
+            var list = new List<News>();
+            foreach (var item in RunTimeConfig.SearchList)
+            {
+                var news = await BuscarNoticiasAsync(item);
+                list.AddRange(news);
+            }
+
+            _logger.LogInformation("rodando");
         }
 
         public async Task<List<News>> BuscarNoticiasAsync(string search)

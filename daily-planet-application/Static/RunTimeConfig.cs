@@ -10,6 +10,7 @@ namespace daily_planet_application.Static
         public static string GoogleRssUrl  = "https://news.google.com/rss/";
         //search?q=tecnologia&hl=pt-BR&gl=BR&ceid=BR:pt-419
         public static string CannabisEndpoint = "https://api.otreeba.com/";
+        public static string[] SearchList = ["Xbox", "Playstations", "Steam", "Nintendo", "Nvidea", "Intel", "Amd"];
 
         public static void SetConfigs(ConfigurationManager configuration)
         {

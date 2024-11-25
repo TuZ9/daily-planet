@@ -1,4 +1,5 @@
-﻿using daily_planet_domain.Interface.Services;
+﻿using daily_planet_domain.Entities;
+using daily_planet_domain.Interface.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace daily_planet_infra.Extensions
@@ -14,7 +15,7 @@ namespace daily_planet_infra.Extensions
         {
             using var scope = services.CreateScope();
             var service = scope.ServiceProvider.GetRequiredService<IContentService>();
-            await service.BuscarNoticiasAsync("tecnologia");
+            await service.ProcessNews();
             //BackgroundJob.Enqueue(() => service.BuildBase());
         }
     }
